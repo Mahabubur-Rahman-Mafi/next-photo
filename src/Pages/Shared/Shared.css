@@ -1,0 +1,24 @@
+.navbar-nav a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #00293b;
+}
+.navbar-nav a:hover{
+    color: #00aab7;
+    text-decoration:;
+    text-decoration: underline #00293b;
+}
+.header-button{
+    border: 1px solid #00293b !important;
+    background: none !important;
+    color: #00293b !important;
+    font-size: 16px !important;
+     font-weight: 600 !important;
+}
+.header-button:hover{
+    border: none !important;
+    background: #00aab7 !important;
+    color: #fff !important;
+   
+}
