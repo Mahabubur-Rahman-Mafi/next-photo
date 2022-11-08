@@ -9,7 +9,7 @@ import img5 from "../../Assets/carousel/image-5-min.jpg";
 
 const Carousels = () => {
   return (
-    <Container>
+    <Container className="mt-4">
       <Carousel slide={false}>
         <Carousel.Item>
           <img className="d-block w-100" src={img5} alt="First slide" />
