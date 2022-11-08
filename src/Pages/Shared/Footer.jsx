@@ -5,7 +5,7 @@ import logo from "../../Assets/logo-lg.png";
 const Footer = () => {
   return (
     <Container>
-      <Row className="text-center align-items-center">
+      <Row className="text-center align-items-center py-4">
         <Col lg={4} md={6} sm={1}>
           <img
             src={logo}

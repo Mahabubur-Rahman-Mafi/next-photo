@@ -14,7 +14,7 @@ import img9 from "../../Assets/logo/logo-9.png";
 const Clients = () => {
   return (
     <div>
-      <h1 className="text-center mt-4 mb-4">Our Clients</h1>
+      <h1 className="text-center mt-4 mb-5">Our Clients</h1>
       <Carousel>
         <Carousel.Item>
           <Row className="text-center  w-100">

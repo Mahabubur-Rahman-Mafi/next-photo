@@ -7,8 +7,12 @@ import { FaUserCircle } from "react-icons/fa";
 import logo from "../../Assets/logo-lg.png";
 
 import "./Shared.css";
+import { useContext } from "react";
+import { UserAuth } from "../../Auth/AuthContext";
 
 const Header = () => {
+  const { user } = useContext(UserAuth);
+  console.log(user);
   return (
     <>
       <Navbar bg="transparent" expand="lg">
@@ -40,6 +44,7 @@ const Header = () => {
             </Nav>
             <FaUserCircle />
             <Button className="header-button">Log Out</Button>
+            {user?.name}
             <Button className="header-button">Log In</Button>
           </Navbar.Collapse>
         </Container>
