@@ -4,10 +4,12 @@ import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/log/Login";
 import Regestration from "../Pages/log/Regestration";
+import AddService from "../Pages/Personal/AddService";
 import MyReview from "../Pages/Personal/MyReview";
 import Profile from "../Pages/Personal/Profile";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import Services from "../Pages/Services/Services";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -35,15 +37,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "review",
-        element: <MyReview></MyReview>,
+        element: (
+          <PrivateRoute>
+            <MyReview></MyReview>
+          </PrivateRoute>
+        ),
       },
       {
         path: "profile",
-        element: <Profile></Profile>
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
-        path: "review",
-        element: <MyReview></MyReview>,
+        path: "addservice",
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
     ],
   },

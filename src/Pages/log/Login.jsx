@@ -15,7 +15,6 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const [error, setError] = useState('');
-  console.log(error);
   const location =useLocation()
 
    const from = location.state?.from?.pathname || "/";
@@ -28,13 +27,11 @@ const Login = () => {
     userLogIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         navigate(from, { replace: true });
       })
       .catch((e) => {
         setError(e.message);
         form.reset()
-        console.log(e);
       });
   };
 
@@ -42,7 +39,6 @@ const Login = () => {
     googleAuthProvider(googleProvider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         navigate(from, { replace: true });
       })
       .catch((e) => console.log(e));

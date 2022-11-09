@@ -22,7 +22,6 @@ const AuthContext = ({ children }) => {
     setLoader(true);
     return signInWithPopup(auth, provider);
   };
-
   useEffect(() => {
     const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

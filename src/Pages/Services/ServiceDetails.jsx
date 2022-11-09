@@ -29,15 +29,16 @@ const ServiceDetails = () => {
             <div className="px-3 price-section mt-3">
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.basic.click} Clicks
+                {price?.basic
+                ?.click} Clicks
               </p>
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.basic.amount}$(only)
+                {price?.basic.amount}$(only)
               </p>
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.basic.time} Days Delivery
+                {price?.basic.time} Days Delivery
               </p>
             </div>
           </div>
@@ -46,15 +47,15 @@ const ServiceDetails = () => {
             <div className="px-3 price-section mt-3">
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.Premium.click} Clicks
+                {price?.Premium?.click} Clicks
               </p>
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.Premium.amount}$(only)
+                {price?.Premium?.amount}$(only)
               </p>
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.Premium.time} Days Delivery
+                {price?.Premium?.time} Days Delivery
               </p>
             </div>
           </div>
@@ -63,15 +64,15 @@ const ServiceDetails = () => {
             <div className="px-3 price-section mt-3">
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.Gold.click} Clicks
+                {price?.Gold?.click} Clicks
               </p>
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.Gold.amount}$(only)
+                {price?.Gold?.amount}$(only)
               </p>
               <p>
                 <FaCaretSquareRight className="me-2" />
-                {price.Gold.time} Days Delivery
+                {price?.Gold?.time} Days Delivery
               </p>
             </div>
           </div>
