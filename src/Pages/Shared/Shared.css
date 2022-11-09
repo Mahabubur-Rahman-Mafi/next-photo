@@ -32,3 +32,9 @@
     color: #00aab7;
     font-weight: 600;
 }
+.dropdown{
+text-align: center;
+}
+.navbar-collapse  .header-button{
+text-align: center;
+}
