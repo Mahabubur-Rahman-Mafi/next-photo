@@ -4,7 +4,7 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import image2 from "../../Assets/registration.png";
 import { UserAuth } from "../../Auth/AuthContext";
 
@@ -16,6 +16,9 @@ const Regestration = () => {
     useContext(UserAuth);
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
+  const location = useLocation()
+  
+   const from = location.state?.from?.pathname || "/";
 
   const handlefrom = (e) => {
     e.preventDefault();
@@ -37,7 +40,7 @@ const Regestration = () => {
   };
   useEffect(() => {
     if (user) {
-      navigate("/");
+      navigate(from, { replace: true });
     }
   }, [user, navigate]);
 

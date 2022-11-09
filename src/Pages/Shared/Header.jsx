@@ -13,20 +13,15 @@ import { UserAuth } from "../../Auth/AuthContext";
 import { Dropdown, Image } from "react-bootstrap";
 
 const Header = () => {
-  const { user, logOutUser,  } = useContext(UserAuth);
-  const placement = 'left'
+  const { user, logOutUser } = useContext(UserAuth);
+  const placement = "left";
   const logoutControl = () => {
     logOutUser()
       .then()
-      .catch(e => {
-      console.log(e);
-    })
-  }
-
-
-
-
-
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   return (
     <>
@@ -90,11 +85,11 @@ const Header = () => {
                           <Dropdown.Item>
                             <Link to="/profile">Profile</Link>
                           </Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">
+                          <Dropdown.Item>
                             <Link to="/review">My Review</Link>
                           </Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">
-                            Update Profile
+                          <Dropdown.Item>
+                            <Link to="/addservice">Add Service</Link>
                           </Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
@@ -126,11 +121,11 @@ const Header = () => {
                           <Dropdown.Item>
                             <Link to="/profile">Profile</Link>
                           </Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">
+                          <Dropdown.Item>
                             <Link to="/review">My Review</Link>
                           </Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">
-                            Update Profile
+                          <Dropdown.Item>
+                            <Link to="/addservice">Add Service</Link>
                           </Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>

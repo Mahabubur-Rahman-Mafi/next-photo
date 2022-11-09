@@ -9,8 +9,7 @@ import Review from "./Review";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
-  const { image, name, des, price } = service;
-  console.log(service);
+  const { image, name, des, price, _id } = service;
   return (
     <Container>
       <h1 className="mt-4">{name}</h1>
@@ -76,8 +75,8 @@ const ServiceDetails = () => {
               </p>
             </div>
           </div>
-              </div>
-              <Review></Review>
+        </div>
+        <Review service={service}></Review>
       </PhotoProvider>
     </Container>
   );

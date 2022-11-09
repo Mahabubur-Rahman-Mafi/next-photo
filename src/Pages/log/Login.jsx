@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import image2 from "../../Assets/login-min.png";
 import { FaGoogle } from "react-icons/fa";
 import "./Shared.css";
@@ -15,22 +15,26 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const [error, setError] = useState('');
+  console.log(error);
+  const location =useLocation()
+
+   const from = location.state?.from?.pathname || "/";
 
   const handlefrom = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     userLogIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((e) => {
-        setError(e);
+        setError(e.message);
         form.reset()
+        console.log(e);
       });
   };
 
@@ -39,7 +43,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((e) => console.log(e));
   };
