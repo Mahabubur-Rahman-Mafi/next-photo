@@ -4,8 +4,8 @@ import Accordion from "react-bootstrap/Accordion";
 
 const FAQ = () => {
     return (
-      <>
-        <h1 className="text-center mb-4 mt-5">FAQ</h1>
+      <div className='container'>
+        <h1 className="text-center mb-4 mt-5 ">FAQ</h1>
         <Accordion className="w-75 mx-auto mb-4">
           <Accordion.Item eventKey="0">
             <Accordion.Header className="text-center">
@@ -41,7 +41,7 @@ const FAQ = () => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-      </>
+      </div>
     );
 };
 

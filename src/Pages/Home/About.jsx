@@ -4,7 +4,7 @@ import img from "../../Assets/imgSlide.jpg";
 
 const About = () => {
   return (
-    <div className="mt-5">
+    <div className="mt-5 container">
       <h1 className="text-center mb-4">About</h1>
       <Row>
         <Col lg={6} sm={12}>

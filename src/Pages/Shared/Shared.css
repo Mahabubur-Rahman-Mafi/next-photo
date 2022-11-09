@@ -22,3 +22,13 @@
     color: #fff !important;
    
 }
+.tex-design a{
+    text-decoration: none;
+    font-size: 17px;
+    color: #00293b;
+}
+.tex-design a:hover{
+   
+    color: #00aab7;
+    font-weight: 600;
+}

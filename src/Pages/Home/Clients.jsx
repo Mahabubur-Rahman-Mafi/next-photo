@@ -13,7 +13,7 @@ import img9 from "../../Assets/logo/logo-9.png";
 
 const Clients = () => {
   return (
-    <div>
+    <div className="container">
       <h1 className="text-center mt-4 mb-5">Our Clients</h1>
       <Carousel>
         <Carousel.Item>
