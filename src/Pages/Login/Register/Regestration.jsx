@@ -11,7 +11,6 @@ import "./Shared.css";
 
 const Regestration = () => {
   const [error, setError] = useState("");
-  const [name, setName] = useState();
   const { createUser, googleAuthProvider, nameUpdate, setUser, user } =
     useContext(UserAuth);
   const googleProvider = new GoogleAuthProvider();
