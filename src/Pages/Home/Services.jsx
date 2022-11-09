@@ -21,8 +21,8 @@ const Services = () => {
               <SerCard s={s} key={s._id}></SerCard>
             ))}
           </div>
-          <Link className='text-center'>
-            <Button className="service-button text-end">
+          <Link to='/services' className='text-center'>
+            <Button className="service-button mb-4 mt-3">
               View Some
             </Button>
           </Link>
