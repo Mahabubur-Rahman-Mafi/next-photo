@@ -5,8 +5,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import image2 from "../../../Assets/registration.png";
-import { UserAuth } from "../../../Auth/AuthContext";
+import image2 from "../../Assets/registration.png";
+import { UserAuth } from "../../Auth/AuthContext";
+
 import "./Shared.css";
 
 const Regestration = () => {

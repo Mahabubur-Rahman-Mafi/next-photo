@@ -3,7 +3,6 @@ import Card from "react-bootstrap/Card";
 
 const SerCard = ({ s }) => {
     const { name, des, image} = s;
-    console.log(s);
     return (
       <Card>
         <Card.Img variant="top" src={image} />

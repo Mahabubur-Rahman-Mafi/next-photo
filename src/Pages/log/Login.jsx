@@ -3,11 +3,12 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
-import image2 from "../../../Assets/login-min.png";
+import image2 from "../../Assets/login-min.png";
 import { FaGoogle } from "react-icons/fa";
 import "./Shared.css";
-import { UserAuth } from "../../../Auth/AuthContext";
+
 import { GoogleAuthProvider } from "firebase/auth";
+import { UserAuth } from "../../Auth/AuthContext";
 
 const Login = () => {
   const { googleAuthProvider, userLogIn } = useContext(UserAuth);
