@@ -11,12 +11,12 @@ import toast from "react-hot-toast";
 const Review = ({ service }) => {
   const { name, _id } = service;
   const { user, loader } = useContext(UserAuth);
-    const [review, setReview] = useState([]);
-    const [error, setError] =useState('')
+  const [review, setReview] = useState([]);
+  const [error, setError] = useState("");
   const location = useLocation();
   const param = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${param.id}`)
+    fetch(`https://nexl-photography-server.vercel.app/reviews/${param.id}`)
       .then((res) => res.json())
       .then((data) => setReview(data))
       .catch((e) => console.log(e));
@@ -34,36 +34,35 @@ const Review = ({ service }) => {
   const handleForm = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-      const text = e.target.text.value;
-      const wr = "hi there how are you";
-      console.log(wr.length);
-      if (text.length >20) {
-        e.target.reset();
-        const review = {
-          serviceId: _id,
-          serviceName: name,
-          email,
-          text,
-            name: user.displayName,
-          date: new Date()
-        };
-        fetch("http://localhost:5000/reviews", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(review),
+    const text = e.target.text.value;
+    const wr = "hi there how are you";
+    console.log(wr.length);
+    if (text.length > 20) {
+      e.target.reset();
+      const review = {
+        serviceId: _id,
+        serviceName: name,
+        email,
+        text,
+        name: user.displayName,
+        date: new Date(),
+      };
+      fetch("https://nexl-photography-server.vercel.app/reviews", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(review),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          toast.success("Thank you for your review");
         })
-          .then((res) => res.json())
-          .then((data) => {
-            toast.success("Thank you for your review");
-          })
-              .cath((e) => console.log(e));
-          setError('')
-      }
-      else {
-          setError('Please write at lest 20 Characters.')
-      }
+        .cath((e) => console.log(e));
+      setError("");
+    } else {
+      setError("Please write at lest 20 Characters.");
+    }
   };
 
   return (

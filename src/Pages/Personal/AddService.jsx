@@ -20,7 +20,7 @@ const AddService = () => {
         image,
         des,
       };
-      fetch("http://localhost:5000/services", {
+      fetch("https://nexl-photography-server.vercel.app/services", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -28,9 +28,9 @@ const AddService = () => {
         body: JSON.stringify(service),
       })
         .then((res) => res.json())
-          .then((data) => {
-              console.log(data);
-              toast.success('service added')
+        .then((data) => {
+          console.log(data);
+          toast.success("service added");
         })
         .cath((e) => console.log(e));
     } else {

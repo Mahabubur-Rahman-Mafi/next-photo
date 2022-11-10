@@ -8,7 +8,7 @@ const MyReview = () => {
   const { user, loader } = useContext(UserAuth);
   const [review, setReview] = useState([]);
 
-  const url = `http://localhost:5000/reviews?email=${user?.email}`;
+  const url = `https://nexl-photography-server.vercel.app/reviews?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

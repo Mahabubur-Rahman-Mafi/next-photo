@@ -7,6 +7,7 @@ import Regestration from "../Pages/log/Regestration";
 import AddService from "../Pages/Personal/AddService";
 import MyReview from "../Pages/Personal/MyReview";
 import Profile from "../Pages/Personal/Profile";
+import Update from "../Pages/Personal/Update";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import Services from "../Pages/Services/Services";
 import PrivateRoute from "./PrivateRoute";
@@ -23,13 +24,16 @@ export const router = createBrowserRouter([
       {
         path: "services",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () =>
+          fetch("https://nexl-photography-server.vercel.app/services"),
       },
       {
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://nexl-photography-server.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "blog",
@@ -58,6 +62,10 @@ export const router = createBrowserRouter([
             <AddService></AddService>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "update",
+        element: <Update></Update>,
       },
     ],
   },
