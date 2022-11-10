@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import { Button, Container } from "react-bootstrap";
-import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
 
 const AddService = () => {
   const [error, setError] = useState("");
   const handleForm = (e) => {
-    e.preventDefault();;
+    e.preventDefault();
     const form = e.target;
     const name = form.serviceName.value;
     const image = form.image.value;
-      const des = form.text.value;
-      console.log(name, image, des);
-      if (des.length > 30) {
-          form.reset();
-          setError("");
+    const des = form.text.value;
+    console.log(name, image, des);
+    if (des.length > 30) {
+      form.reset();
+      setError("");
       const service = {
         name,
         image,
@@ -31,7 +29,6 @@ const AddService = () => {
         .then((res) => res.json())
         .then((data) => console.log(data))
         .cath((e) => console.log(e));
-        
     } else {
       setError("Please write at lest 30 Characters.");
     }

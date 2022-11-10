@@ -6,8 +6,11 @@ import { UserAuth } from '../../Auth/AuthContext';
 
 const RevCard = ({ rev }) => {
     const { user } = useContext(UserAuth)
-    console.log(user.displayName);
-    const {serviceName, text} = rev
+  const { serviceName, text, _id } = rev
+  
+  const deteleButton = () => {
+    
+  }
     return (
       <div>
         <Card className='mb-4'>
@@ -22,7 +25,7 @@ const RevCard = ({ rev }) => {
               <FaQuoteRight className='mb-0'/>
             </Card.Text>
             <div className="text-end">
-              <Button variant="outline-danger" className="me-2">
+              <Button variant="outline-danger" className="me-2" onClick={deteleButton}>
                 Delete
               </Button>
               <Button variant="outline-success">Update</Button>
