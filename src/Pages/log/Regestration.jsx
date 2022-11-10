@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Helmet } from "react-helmet";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import image2 from "../../Assets/registration.png";
@@ -52,65 +53,70 @@ const Regestration = () => {
       .catch((e) => console.log(e));
   };
   return (
-    <div className="login-form">
-      <h1 className="text-center p-4 mb-4">Create an account</h1>
-      <Container>
-        <Row className="align-items-center">
-          <Col>
-            <Image src={image2} className="w-100"></Image>
-          </Col>
-          <Col>
-            <Form className="from--reg-control" onSubmit={handlefrom}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="name"
-                  placeholder="Enter your name"
-                  name="name"
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  name="email"
-                />
-              </Form.Group>
+    <>
+      <Helmet>
+        <title> Registration | NEXT </title>
+      </Helmet>
+      <div className="login-form">
+        <h1 className="text-center p-4 mb-4">Create an account</h1>
+        <Container>
+          <Row className="align-items-center">
+            <Col>
+              <Image src={image2} className="w-100"></Image>
+            </Col>
+            <Col>
+              <Form className="from--reg-control" onSubmit={handlefrom}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    type="name"
+                    placeholder="Enter your name"
+                    name="name"
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter email"
+                    name="email"
+                  />
+                </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                />
-              </Form.Group>
-              <p>{error}</p>
-              <Button
-                variant="primary"
-                type="submit"
-                className="mt-3 mb-3 w-100 py-2 fs-5"
-              >
-                Create an account
-              </Button>
-              <hr />
-              <p className="text-center mb-0">
-                Already, Have an account? <Link to="/login">Log in</Link>
-              </p>
-              <hr />
-              <Button
-                className="mt-3 mb-0 w-100 py-2 fs-5"
-                variant="outline-success"
-                onClick={handlegooglebutton}
-              >
-                <FaGoogle /> Go with Google
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                  />
+                </Form.Group>
+                <p>{error}</p>
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="mt-3 mb-3 w-100 py-2 fs-5"
+                >
+                  Create an account
+                </Button>
+                <hr />
+                <p className="text-center mb-0">
+                  Already, Have an account? <Link to="/login">Log in</Link>
+                </p>
+                <hr />
+                <Button
+                  className="mt-3 mb-0 w-100 py-2 fs-5"
+                  variant="outline-success"
+                  onClick={handlegooglebutton}
+                >
+                  <FaGoogle /> Go with Google
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 
