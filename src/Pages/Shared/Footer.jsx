@@ -19,10 +19,10 @@ const Footer = () => {
             or review your photos.
           </p>
         </Col>
-        <Col lg={4} md={6} sm={1} className="text-center">
+        <Col lg={4} md={6} sm={12} className="text-center">
           <p>&copy; By Next. All right services to 2022</p>
         </Col>
-        <Col lg={4} md={6} sm={1}>
+        <Col lg={4} md={6} sm={12}>
           <p>
             Design & Developed by{" "}
             <span>

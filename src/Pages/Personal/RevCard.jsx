@@ -11,7 +11,6 @@ const RevCard = ({ rev }) => {
   const { user } = useContext(UserAuth);
   const { serviceName, text, _id } = rev;
   const [show, setShow] = useState(false);
-
   const deteleButton = () => {
     // alert
     const okay = window.confirm("Are you want to delete it?");
@@ -20,7 +19,7 @@ const RevCard = ({ rev }) => {
       fetch(`https://nexl-photography-server.vercel.app/reviews/${_id}`, {
         method: "DELETE",
       })
-        .then((res) => res.json)
+        .then((res) => res.json())
         .then((data) => {
           toast.success("You review has been removed");
           console.log(data);

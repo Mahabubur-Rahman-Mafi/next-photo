@@ -15,12 +15,16 @@ const Review = ({ service }) => {
   const [error, setError] = useState("");
   const location = useLocation();
   const param = useParams();
+  const [upd, setUpd] =useState(false)
   useEffect(() => {
     fetch(`https://nexl-photography-server.vercel.app/reviews/${param.id}`)
       .then((res) => res.json())
       .then((data) => setReview(data))
-      .catch((e) => console.log(e));
-  }, []);
+      .catch((e) => {
+        console.log(e);
+        setUpd(true)
+      });
+  }, [upd]);
   if (loader) {
     return (
       <Container className="text-center py-5">

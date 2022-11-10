@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 
 const AddService = () => {
@@ -38,38 +39,43 @@ const AddService = () => {
     }
   };
   return (
-    <Container>
-      <h1 className="text-center mt-4 mb-4">Add your Own Services</h1>
-      <Form onSubmit={handleForm}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Service Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="serviceName"
-            placeholder="Enter service name"
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Image URL</Form.Label>
-          <Form.Control
-            type="text"
-            name="image"
-            placeholder="Enter Image Url"
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Description</Form.Label>
-          <Form.Control as="textarea" rows={3} name="text" required />
-        </Form.Group>
-        <p className="text-danger">{error}</p>
-        <Button type="submit" variant="outline-success">
-          Add you service
-        </Button>
-      </Form>
-    </Container>
-  );
+    <>
+      <Helmet>
+        <title>Add service | Next</title>
+      </Helmet>
+      <Container>
+        <h1 className="text-center mt-4 mb-4">Add your Own Services</h1>
+        <Form onSubmit={handleForm}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Service Name</Form.Label>
+            <Form.Control
+              type="text"
+              name="serviceName"
+              placeholder="Enter service name"
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Image URL</Form.Label>
+            <Form.Control
+              type="text"
+              name="image"
+              placeholder="Enter Image Url"
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Description</Form.Label>
+            <Form.Control as="textarea" rows={3} name="text" required />
+          </Form.Group>
+          <p className="text-danger">{error}</p>
+          <Button type="submit" variant="outline-success">
+            Add you service
+          </Button>
+        </Form>
+      </Container>
+    </>
+  )
 };
 
 export default AddService;

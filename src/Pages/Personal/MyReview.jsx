@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { UserAuth } from "../../Auth/AuthContext";
 import Spinner from "react-bootstrap/Spinner";
 import RevCard from "./RevCard";
+import { Helmet } from "react-helmet";
 
 const MyReview = () => {
   const { user, loader } = useContext(UserAuth);
@@ -25,18 +26,23 @@ const MyReview = () => {
   }
 
   return (
-    <Container>
-      <h1 className="text-center mt-5 mb-5">Your Review</h1>
-      {review.length === 0 ? (
-        <p className="text-center">You don't give any review yet</p>
-      ) : (
-        <>
-          {review.map((rev) => (
-            <RevCard key={rev._id} rev={rev}></RevCard>
-          ))}
-        </>
-      )}
-    </Container>
+    <>
+      <Helmet>
+        <title>My Reviews | Next</title>
+      </Helmet>
+      <Container>
+        <h1 className="text-center mt-5 mb-5">Your Review</h1>
+        {review.length === 0 ? (
+          <p className="text-center">You don't give any review yet</p>
+        ) : (
+          <>
+            {review.map((rev) => (
+              <RevCard key={rev._id} rev={rev}></RevCard>
+            ))}
+          </>
+        )}
+      </Container>
+    </>
   );
 };
 

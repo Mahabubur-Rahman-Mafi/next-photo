@@ -9,7 +9,7 @@ import Review from "./Review";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
-  const { image, name, des, price, _id } = service;
+  const { image, name, des, price} = service;
   return (
     <Container>
       <h1 className="mt-4">{name}</h1>

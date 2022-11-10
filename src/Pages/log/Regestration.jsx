@@ -72,6 +72,7 @@ const Regestration = () => {
                     type="name"
                     placeholder="Enter your name"
                     name="name"
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
