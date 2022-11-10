@@ -9,6 +9,7 @@ import "./Shared.css";
 
 import { GoogleAuthProvider } from "firebase/auth";
 import { UserAuth } from "../../Auth/AuthContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { googleAuthProvider, userLogIn } = useContext(UserAuth);
@@ -28,6 +29,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
+        toast.success("login Successfully");
       })
       .catch((e) => {
         setError(e.message);
@@ -40,6 +42,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
+        toast.success('login Successfully')
       })
       .catch((e) => console.log(e));
   };

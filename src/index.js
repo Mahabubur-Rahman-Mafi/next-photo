@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AuthContext from '../src/Auth/AuthContext';
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthContext>
       <App />
+      <Toaster></Toaster>
     </AuthContext>
   </React.StrictMode>
 );

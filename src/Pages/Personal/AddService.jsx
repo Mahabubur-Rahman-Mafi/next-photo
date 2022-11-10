@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import toast from "react-hot-toast";
 
 const AddService = () => {
   const [error, setError] = useState("");
@@ -27,7 +28,10 @@ const AddService = () => {
         body: JSON.stringify(service),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+          .then((data) => {
+              console.log(data);
+              toast.success('service added')
+        })
         .cath((e) => console.log(e));
     } else {
       setError("Please write at lest 30 Characters.");

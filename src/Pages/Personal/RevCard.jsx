@@ -1,15 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import toast from 'react-hot-toast';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import { UserAuth } from '../../Auth/AuthContext';
 
 const RevCard = ({ rev }) => {
     const { user } = useContext(UserAuth)
   const { serviceName, text, _id } = rev
-  
+  const [rest, setRest] =useState()
+
   const deteleButton = () => {
-    
+    const okay = window.confirm('Are you want to delete it?')
+    console.log(`http://localhost:5000/reviews/${_id}`);
+    if (okay) {
+      fetch(`http://localhost:5000/reviews/${_id}`, {
+        method: "DELETE"
+      })
+        .then(res => res.json)
+      .then(data=>{
+        toast.success("You review has been removed");
+        console.log(data)
+      })
+    }
   }
     return (
       <div>

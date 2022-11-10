@@ -6,6 +6,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { UserAuth } from "../../Auth/AuthContext";
 import Form from "react-bootstrap/Form";
 import AllRevCard from "./AllRevCard";
+import toast from "react-hot-toast";
 
 const Review = ({ service }) => {
   const { name, _id } = service;
@@ -43,7 +44,8 @@ const Review = ({ service }) => {
           serviceName: name,
           email,
           text,
-          name: user.displayName,
+            name: user.displayName,
+          date: new Date()
         };
         fetch("http://localhost:5000/reviews", {
           method: "POST",
@@ -54,8 +56,7 @@ const Review = ({ service }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            const newItem = [...review, data];
-            setReview(newItem);
+            toast.success("Thank you for your review");
           })
               .cath((e) => console.log(e));
           setError('')

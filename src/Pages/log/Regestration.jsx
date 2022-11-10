@@ -33,7 +33,7 @@ const Regestration = () => {
         nameUpdate(name);
       })
       .catch((e) => {
-        setError(e);
+        setError(e.message);
         form.reset();
       });
   };
