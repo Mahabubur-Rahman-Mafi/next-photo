@@ -28,7 +28,7 @@ const Header = () => {
       <Navbar bg="transparent" expand="lg">
         <Container>
           <Navbar.Brand>
-            <Link>
+            <Link to='/'>
               <img
                 src={logo}
                 width="100"
