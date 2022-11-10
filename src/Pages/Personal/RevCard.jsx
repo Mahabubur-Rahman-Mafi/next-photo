@@ -61,7 +61,7 @@ const RevCard = ({ rev }) => {
           <Card.Title>{user?.displayName}</Card.Title>
           <Card.Text>
             <FaQuoteLeft />
-            <p className="mb-0 my-2 fw-semibold">{text?.text} </p>
+            <p className="mb-0 my-2 fw-semibold">{text} </p>
             <FaQuoteRight className="mb-0" />
           </Card.Text>
           <div className="text-end">
@@ -96,7 +96,7 @@ const RevCard = ({ rev }) => {
               as="textarea"
               rows={3}
               name="review"
-              defaultValue={text?.text}
+              defaultValue={text}
             />
           </Form.Group>
           <Button variant="primary" type="submit">
